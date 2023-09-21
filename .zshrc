@@ -90,6 +90,7 @@ alias yt-dlp-mp4="yt-dlp -S res,ext:mp4:m4a --recode mp4"
 alias explorer="explorer.exe"
 alias winget="winget.exe"
 alias taskkill="taskkill.exe"
+alias nslookup="nslookup.exe"
 
 # Defaults
 source $OP_INTEGRATION_SCRIPT
