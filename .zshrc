@@ -91,7 +91,6 @@ ls-count-grouped-by-extensions() {
 alias lse=ls-count-grouped-by-extensions
 
 reset-1password-integration() {
-  killall socat
   source $OP_INTEGRATION_SCRIPT
 }
 alias reset1p="reset-1password-integration"
