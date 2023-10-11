@@ -1,6 +1,7 @@
 # Code extracted from https://stuartleeks.com/posts/wsl-ssh-key-forward-to-windows/ with minor modifications
 
 # Configure ssh forwarding
+mkdir -p $HOME/.1password >/dev/null 2>&1
 export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
 # need `ps -ww` to get non-truncated command for matching
 # use square brackets to generate a regex match for the process we want but that doesn't match the grep command running it!
