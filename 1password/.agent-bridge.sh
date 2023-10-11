@@ -8,6 +8,8 @@ ALREADY_RUNNING=$(ps -auxww | grep -q "[n]piperelay.exe -ei -s //./pipe/openssh-
 if [[ $ALREADY_RUNNING != "0" ]]; then
     if [[ -S $SSH_AUTH_SOCK ]]; then
         # not expecting the socket to exist as the forwarding command isn't running (http://www.tldp.org/LDP/abs/html/fto.html)
+        SOCAT_PID=$(pgrep -f openssh-ssh-agent)
+        kill -9 $SOCAT_PID >/dev/null 2>&1
         [[ ! -z ${DEBUG+x} ]] && echo "Removing previous socket..."
         rm $SSH_AUTH_SOCK
     fi
