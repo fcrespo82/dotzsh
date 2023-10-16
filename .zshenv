@@ -13,3 +13,5 @@ export PATH=$PATH:$HOME/.cargo/bin
 # Bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+source expo.zsh
