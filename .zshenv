@@ -2,7 +2,7 @@
 export HOME_WIN=/mnt/c/Users/Fernando
 export PATH=$HOME/.local/bin:$PATH
 # 1Password comunication with wsl
-export OP_INTEGRATION_SCRIPT=${ZDOTDIR:-$HOME}/1password/.agent-bridge.sh
+export OP_INTEGRATION_SCRIPT=${ZDOTDIR:-$HOME}/1password/agent-bridge.sh
 
 # Something uses XDG_CONFIG_HOME to load something
 export XDG_CONFIG_HOME=$HOME
@@ -15,3 +15,5 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 source ${ZDOTDIR:-$HOME}/expo.zsh
+
+export REACT_EDITOR=code
