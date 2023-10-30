@@ -15,19 +15,14 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
 zstyle ':completion:*' menu select=1
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle :compinstall filename "${ZDOTDIR:-$HOME}.zshrc"
+zstyle :compinstall filename "${ZDOTDIR:-$HOME}/.zshrc"
 fpath=(${HOME}/.zsh/completions $fpath)
 
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 # Accepts autosuggestion with Ctrl+space
-bindkey '^ ' autosuggest-accept
-bindkey "^[[H" beginning-of-line
-bindkey "^[[F" end-of-line
-bindkey "^[[1;5D" backward-word
-bindkey "^[[1;5C" forward-word
-bindkey "^[[3~" delete-char
+source ${ZDOTDIR:-$HOME}/bindings.zsh
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
