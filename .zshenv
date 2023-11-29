@@ -1,8 +1,6 @@
 # Personal
 export HOME_WIN=/mnt/c/Users/Fernando
 export PATH=$HOME/.local/bin:$PATH
-# 1Password comunication with wsl
-export OP_INTEGRATION_SCRIPT=${ZDOTDIR:-$HOME}/1password/agent-bridge.sh
 
 # NVIM uses XDG_CONFIG_HOME to load config
 export XDG_CONFIG_HOME=$HOME

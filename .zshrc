@@ -1,7 +1,9 @@
 [[ ! -z ${DEBUG+x} ]] && echo "Starting personal zsh config"
 
+#Set enviroment variables
 source ${ZDOTDIR:-$HOME}/.zshenv
 
+# Quiet instant prompt. Should stay close to the top of ~/.zshrc.
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # Lines configured by zsh-newuser-install
@@ -21,8 +23,7 @@ fpath=(${HOME}/.zsh/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-# Accepts autosuggestion with Ctrl+space
-source ${ZDOTDIR:-$HOME}/bindings.zsh
+
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -52,14 +53,8 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Run wslpatcher
-if [ -e /mnt/d/wsl/WSLHostPatcher/WSLHostPatcher.exe ]; then
-  /mnt/d/wsl/WSLHostPatcher/WSLHostPatcher.exe > /dev/null
-fi
-
-# I DON'T REMEMBER WHAT THIS IS FOR
-# export EMSDK_QUIET=1
-# source "/usr/lib/emsdk/emsdk_env.sh"
+# Load WSL Host Patcher
+source ${ZDOTDIR:-$HOME}/wsl/host-patcher.zsh
 
 # Bun completions
 [ -s "/home/fernando/.bun/_bun" ] && source "/home/fernando/.bun/_bun"
@@ -85,40 +80,9 @@ ls-count-grouped-by-extensions() {
 }
 alias lse=ls-count-grouped-by-extensions
 
-reset-1password-integration() {
-  export OP_SOCAT_PID=$(pgrep -f openssh-ssh-agent)
-  kill -9 $OP_SOCAT_PID >/dev/null 2>&1
-  source $OP_INTEGRATION_SCRIPT
-}
-alias reset1p="reset-1password-integration"
+# Load bindings
+source ${ZDOTDIR:-$HOME}/bindings.zsh
+# Load aliases
+source ${ZDOTDIR:-$HOME}/aliases.zsh
 
-# Aliases
-if type exa > /dev/null; then 
-  # exa is installed
-  alias ls="exa --icons -g"
-else
-  alias ls="ls -g"
-fi
-alias la="ls -a"
-alias ll="ls -lg"
-alias lla="ls -alg"
-alias ls1="ls -1"
-if type bat > /dev/null; then 
-  # bat is installed
-  alias cat="bat --style=auto"
-fi
-if type nvim > /dev/null; then 
-  # nvim is installed
-  alias vim="nvim"
-fi
-
-alias yt-dlp-mp4="yt-dlp -S res,ext:mp4:m4a --recode mp4"
-alias restartexplorer="taskkill.exe /f /im explorer.exe; explorer.exe &"
-alias explorer="explorer.exe"
-alias winget="winget.exe"
-alias taskkill="taskkill.exe"
-alias nslookup="nslookup.exe"
-alias debug="exec env DEBUG=1 zsh"
-
-# Defaults
 source $OP_INTEGRATION_SCRIPT
