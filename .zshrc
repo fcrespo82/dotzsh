@@ -85,4 +85,5 @@ source ${ZDOTDIR:-$HOME}/bindings.zsh
 # Load aliases
 source ${ZDOTDIR:-$HOME}/aliases.zsh
 
-source $OP_INTEGRATION_SCRIPT
+# Load 1password integration
+source ${ZDOTDIR:-$HOME}/1password/integration.zsh
