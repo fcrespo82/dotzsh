@@ -45,14 +45,6 @@ fpath=(${ASDF_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit
 
-# pnpm
-export PNPM_HOME="/home/fernando/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 # Load WSL Host Patcher
 source ${ZDOTDIR:-$HOME}/wsl/host-patcher.zsh
 
