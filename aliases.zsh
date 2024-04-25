@@ -1,3 +1,5 @@
+[[ ! -z ${DEBUG+x} ]] && echo "Setting custom aliases"
+
 # Aliases
 if type exa > /dev/null; then 
   # exa is installed

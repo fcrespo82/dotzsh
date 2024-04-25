@@ -1,3 +1,5 @@
+[[ ! -z ${DEBUG+x} ]] && echo "Setting bindings"
+
 bindkey '^ ' autosuggest-accept # Accept suggestion on Ctrl + Space
 # bindkey '^I' autosuggest-accept # Accept suggestion on Tab or Ctrl + i Not good, it breaks tab completion
 bindkey "^[[H" beginning-of-line # Home

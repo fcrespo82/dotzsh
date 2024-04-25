@@ -1,3 +1,4 @@
+[[ ! -z ${DEBUG+x} ]] && echo "Integrating 1password"
 # export OP_INTEGRATION_SCRIPT=${ZDOTDIR:-$HOME}/1password/agent-bridge.sh
 
 # reset-1password-integration() {

@@ -1,3 +1,4 @@
+[[ ! -z ${DEBUG+x} ]] && echo "Exporting custom variables"
 # Personal
 export HOME_WIN=/mnt/c/Users/Fernando
 export PATH=$HOME/.local/bin:$PATH

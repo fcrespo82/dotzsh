@@ -1,3 +1,4 @@
+[[ ! -z ${DEBUG+x} ]] && echo "Configuring ip for expo"
 # Since my ip is static, declare it here
 # This config helps metro and wslhostpatcher find expo server when using Expo Go
 
